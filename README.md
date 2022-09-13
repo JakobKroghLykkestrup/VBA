@@ -22,16 +22,16 @@ Remember to reference "Microsoft ActiveX Data Objects x.x Library" in the tools 
 Use the class as such:  
 ```
 Dim log As SQL_API
-Set log = New SQL_API
-log.OpenSQL
+Set sqlClient = New SQL_API
+sqlClient.OpenSQL
 
 'Create a SQL string and get data
 strSQL = "SELECT * FROM test_table"
-log.runQuery(strSQL)
+sqlClient.runQuery(strSQL)
 
 'Output data to range
 rngOutput = worksheets("test").range("A1")
-log.readRsToExcel(rngOutput)
+sqlClient.readRsToExcel(rngOutput)
 
-log.CloseSQL  
+sqlClient.CloseSQL  
 ```
